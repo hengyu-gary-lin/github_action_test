@@ -17,3 +17,8 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - run: echo ${{ runner.temp }}
+  test-var:
+    runs-on: ubuntu-lastest
+    steps:
+      - run: echo ${{ github.workflow }}
+      - run: echo ${{ github.ref }}
