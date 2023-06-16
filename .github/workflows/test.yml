@@ -13,5 +13,5 @@ jobs:
          echo ${{ runner.temp }}
          echo ${{ github.workflow }}
          echo ${{ github.ref }}
-         ${proxy_server}
-         ${proxy_server_2}
+         echo ${proxy_server}
+         echo ${proxy_server_2}
