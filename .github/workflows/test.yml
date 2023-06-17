@@ -15,11 +15,12 @@ jobs:
          echo ${{ github.ref }}
          echo ${proxy_server}
          echo ${proxy_server_2}
+         echo $RUNNER_TEMP
   build:
     runs-on: ubuntu-latest
     container:
       image: ubuntu:latest
-      volumes: ${{ runner.temp }}/myvolume:/myvolume
+      volumes: $RUNNER_TEMP/myvolume:/myvolume
     steps:
       - name: Step 1
         run: |
