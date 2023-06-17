@@ -19,11 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ubuntu:latest
-      volumes:
-        - name: myvolume
-          path: /myvolume
-        - name: temp
-          path: ${{ runner.temp }}
+      volumes: ${{ runner.temp }}:/myvolume
     steps:
       - name: Step 1
         run: |
