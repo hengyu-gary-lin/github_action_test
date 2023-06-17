@@ -19,6 +19,7 @@ jobs:
          echo ${proxy_server_2}
          echo $RUNNER_TEMP
   build:
+    needs: Explore-GitHub-Actions
     runs-on: ubuntu-latest
     container:
       image: ubuntu:latest
@@ -32,6 +33,7 @@ jobs:
         run: |
          cat /myvolume/hello.txt
   long-command-test:
+    needs: [Explore-GitHub-Actions, build]
     runs-on: ubuntu-latest
     steps:
       - name: test
