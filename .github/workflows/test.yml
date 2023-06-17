@@ -22,7 +22,7 @@ jobs:
     container:
       image: ubuntu:latest
       volumes:
-        - ${temp_folder}/myvolume:/myvolume
+        - /home/runner/work/_temp/myvolume:/myvolume
     steps:
       - name: Step 1
         run: |
