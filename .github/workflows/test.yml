@@ -33,7 +33,7 @@ jobs:
         run: |
          cat /myvolume/hello.txt
   long-command-test:
-    needs: [Explore-GitHub-Actions, build]
+    needs: [build]
     runs-on: ubuntu-latest
     steps:
       - name: test
