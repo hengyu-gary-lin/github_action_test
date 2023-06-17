@@ -16,15 +16,15 @@ jobs:
          echo ${proxy_server}
          echo ${proxy_server_2}
          echo $RUNNER_TEMP
-  build:
-    runs-on: ubuntu-latest
-    container:
-      image: ubuntu:latest
-      volumes: $RUNNER_TEMP/myvolume:/myvolume
-    steps:
-      - name: Step 1
-        run: |
-          echo "Hello World" > /myvolume/hello.txt
-      - name: Step 2
-        run: |
-          cat /myvolume/hello.txt
+  #build:
+  #  runs-on: ubuntu-latest
+  #  container:
+  #    image: ubuntu:latest
+  #    volumes: $RUNNER_TEMP/myvolume:/myvolume
+  #  steps:
+  #    - name: Step 1
+  #    run: |
+  #        echo "Hello World" > /myvolume/hello.txt
+ #  - name: Step 2
+  #      run: |
+   #       cat /myvolume/hello.txt
