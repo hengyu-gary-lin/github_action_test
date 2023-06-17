@@ -22,11 +22,11 @@ jobs:
     container:
       image: ubuntu:latest
       volumes:
-        - ${temp_folder}/myvolume
+        - ${temp_folder}/myvolume:/myvolume
     steps:
       - name: Step 1
         run: |
-          echo "Hello World" > ${temp_folder}/myvolume/hello.txt
+          echo "Hello World" > /myvolume/hello.txt
       - name: Step 2
         run: |
          cat /myvolume/hello.txt
