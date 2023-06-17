@@ -36,6 +36,7 @@ jobs:
     steps:
       - name: ">" test
         run: >
+          echo
           apt list |
           grep 'python'
     
