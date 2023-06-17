@@ -32,9 +32,9 @@ jobs:
         run: |
          cat /myvolume/hello.txt
   long-command-test:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
-      - name: ">" test
+      - name: test
         run: >
           echo
           apt list |
