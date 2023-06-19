@@ -13,7 +13,7 @@ jobs:
           mkdir -p os-updator
           pwd
           expr 3 + 7 > os-updator/math-homework.txt
-          expr 1 +100 > os-updator/another-math.txt
+          expr 1 + 100 > os-updator/another-math.txt
       - name: Upload math result for job 1
         uses: actions/upload-artifact@v3
         with:
