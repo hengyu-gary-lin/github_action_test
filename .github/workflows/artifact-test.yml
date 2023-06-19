@@ -8,7 +8,7 @@ jobs:
     name: Add 3 and 7
     runs-on: ubuntu-latest
     steps:
-      - shell: bash
+      - name: run expr command
         run: |
           pwd
           expr 3 + 7 > math-homework.txt
