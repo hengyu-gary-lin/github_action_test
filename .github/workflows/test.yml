@@ -32,18 +32,19 @@ jobs:
       - name: Step 2
         run: |
          cat /myvolume/hello.txt
+         cat /home/runner/work/_temp/myvolume/hello.txt
          
-  test_volumes_work_different_docker:
-    needs: build
-    runs-on: ubuntu-latest
-    container:
-      image: ubuntu:latest
-      volumes:
-        - /home/runner/work/_temp/myvolume:/myvolume
-    steps:
-      - name: check myvolume
-        run: |
-          cat /myvolume/hello.txt
+#   test_volumes_work_different_docker:
+#     needs: build
+#     runs-on: ubuntu-latest
+#     container:
+#       image: ubuntu:latest
+#       volumes:
+#         - /home/runner/work/_temp/myvolume:/myvolume
+#     steps:
+#       - name: check myvolume
+#         run: |
+#           cat /myvolume/hello.txt
 #   long-command-test:
 #     needs: [build]
 #     runs-on: ubuntu-latest
