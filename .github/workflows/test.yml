@@ -32,12 +32,24 @@ jobs:
       - name: Step 2
         run: |
          cat /myvolume/hello.txt
-  long-command-test:
-    needs: [build]
+         
+  test_volumes_work_different_docker:
+    needs: build
     runs-on: ubuntu-latest
+    container:
+      image: ubuntu:latest
+      volumes:
+        - /home/runner/work/_temp/myvolume:/myvolume
     steps:
-      - name: test
-        run: >
-          apt list |
-          grep 'python'
+      - name: check myvolume
+        run: |
+          cat /myvolume/hello.txt
+#   long-command-test:
+#     needs: [build]
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: test
+#         run: >
+#           apt list |
+#           grep 'python'
     
