@@ -31,7 +31,7 @@ jobs:
           name: homework
       - shell: bash
         run: |
-          mkdir -p os-updator
+          cd os-updator
           value=`cat math-homework.txt`
           expr $value \* 9 > os-updator/math-homework.txt
           value=`cat another-math.txt`
