@@ -18,7 +18,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: homework
-          path: os-updator/*
+          path: os-updator/math-homework.txt, os-updator/another-math.txt
 
   job_2:
     name: Multiply by 9
@@ -39,7 +39,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: homework
-          path: os-updator/*
+          path: os-updator/math-homework.txt, os-updator/another-math.txt
   job_3:
     name: Display results
     needs: job_2
