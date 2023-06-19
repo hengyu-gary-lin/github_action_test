@@ -10,7 +10,7 @@ jobs:
     steps:
       - shell: bash
         run: |
-          echo pwd
+          pwd
           expr 3 + 7 > math-homework.txt
       - name: Upload math result for job 1
         uses: actions/upload-artifact@v3
