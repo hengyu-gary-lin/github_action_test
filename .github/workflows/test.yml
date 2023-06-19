@@ -24,16 +24,16 @@ jobs:
     container:
       image: ubuntu:latest
       volumes:
-        - /home/runner/work/_temp/myvolume:/myvolume
+        - /tmp/myvolume:/myvolume
     steps:
       - name: Step 1
         run: |
           echo "Hello World" > /myvolume/hello.txt
-          echo "temp folder" > /home/runner/work/_temp/myvolume/hello_temp.txt
+          echo "temp folder" > /tmp/myvolume/hello_temp.txt
       - name: Step 2
         run: |
-         cat /home/runner/work/_temp/myvolume/hello.txt
-         cat /home/runner/work/_temp/myvolume/hello_temp.txt
+         cat /tmp/myvolume/hello_temp.txt
+         cat /tmp/myvolume/hello_temp.txt
          
 #   test_volumes_work_different_docker:
 #     needs: build
