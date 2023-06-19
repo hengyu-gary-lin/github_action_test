@@ -10,13 +10,14 @@ jobs:
     steps:
       - name: run expr command
         run: |
+          mkdir -p os-updator
           pwd
-          expr 3 + 7 > ~/vol-updator/math-homework.txt
+          expr 3 + 7 > math-homework.txt
       - name: Upload math result for job 1
         uses: actions/upload-artifact@v3
         with:
           name: homework
-          path: ~/vol-updator/math-homework.txt
+          path: math-homework.txt
 
   job_2:
     name: Multiply by 9
