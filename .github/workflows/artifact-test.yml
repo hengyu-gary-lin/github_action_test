@@ -10,15 +10,15 @@ jobs:
     steps:
       - name: run expr command
         run: |
-          mkdir -p os-updator
+          mkdir -p /os-updator
           pwd
-          expr 3 + 7 > os-updator/math-homework.txt
-          expr 1 + 100 > os-updator/another-math.txt
+          expr 3 + 7 > /os-updator/math-homework.txt
+          expr 1 + 100 > /os-updator/another-math.txt
       - name: Upload math result for job 1
         uses: actions/upload-artifact@v3
         with:
           name: homework
-          path: os-updator
+          path: /os-updator
 
   job_2:
     name: Multiply by 9
@@ -29,20 +29,20 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: homework
-          path: os-updator
+          path: /os-updator
       - shell: bash
         run: |
           pwd
           ls -al
-          value=`cat os-updator/math-homework.txt`
-          expr $value \* 9 > os-updator/math-homework.txt
+          value=`cat /os-updator/math-homework.txt`
+          expr $value \* 9 > /os-updator/math-homework.txt
           value=`cat os-updator/another-math.txt`
-          expr $value \* 2 > os-updator/another-math.txt
+          expr $value \* 2 > /os-updator/another-math.txt
       - name: Upload math result for job 2
         uses: actions/upload-artifact@v3
         with:
           name: homework
-          path: os-updator
+          path: /os-updator
   job_3:
     name: Display results
     needs: job_2
