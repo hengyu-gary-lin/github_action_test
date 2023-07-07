@@ -1,0 +1,12 @@
+name: my workflow
+on: 
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set env
+      run: echo "EXPORT POSTRESQL= 11.12.13.14" >> $GITHUB_ENV
+    - name: Test
+      run: echo $POSTRESQL
