@@ -1,11 +1,19 @@
 name: my workflow
 on: push
 jobs:
-  build:
+  step1:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - name: Set FOO
       run: echo "FOO=12.13.14.15" >> $GITHUB_ENV
+    - name: Test
+      run: echo $FOO
+  step2:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set FOO
+      run: echo "FOO=16.17.18.19" >> $GITHUB_ENV
     - name: Test
       run: echo $FOO
