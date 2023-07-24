@@ -1,7 +1,4 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
-name: Node.js CI
+name: Mixed inputs
 
 on:
   workflow_dispatch:
@@ -20,14 +17,27 @@ on:
         type: string
       tunnel:
         description: 'enable tunnel'
-        type: choice
-        options:
-         - '--tunnel'
+        type: boolean
 jobs:
-  greet:
+  No_tunnel:
     runs-on: ubuntu-latest
-
+    if: false
     steps:
     - name: test
       run: >
-        echo ${{ inputs.tunnel }}
+        echo python3
+        ${{ inputs.username }}
+        ${{ inputs.password }}
+        ${{ inputs.id_addr }}   
+  tunnel:
+    runs-on: ubuntu-latest
+    if: ture
+    steps:
+    - name: test
+      run: >
+        echo python3
+        ${{ inputs.username }}
+        ${{ inputs.password }}
+        ${{ inputs.id_addr }}
+        ${{ inputs.tunnel }}
+    
