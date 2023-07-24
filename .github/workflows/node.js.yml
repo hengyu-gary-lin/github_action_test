@@ -35,7 +35,7 @@ jobs:
         ${{ inputs.id_addr }}   
   tunnel:
     runs-on: ubuntu-latest
-    if: ${{ inputs.tunnel. }} == 'enable'
+    if: ${{ inputs.tunnel }} == 'enable'
     steps:
     - name: test
       run: >
