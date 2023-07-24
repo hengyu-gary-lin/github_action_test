@@ -20,13 +20,13 @@ on:
         type: choice
         required: true
         option:
-        - true
-        - false
+        - 'yes'
+        - 'no'
 
 jobs:
   No_tunnel:
     runs-on: ubuntu-latest
-    if: false
+    if: ${{ inputs.tunnel}} == 'no'
     steps:
     - name: test
       run: >
@@ -36,7 +36,7 @@ jobs:
         ${{ inputs.id_addr }}   
   tunnel:
     runs-on: ubuntu-latest
-    if: ${{ input.tunnel }}
+    if: ${{ input.tunnel }} == 'yes'
     steps:
     - name: test
       run: >
@@ -45,5 +45,3 @@ jobs:
         ${{ inputs.password }}
         ${{ inputs.id_addr }}
         ${{ inputs.tunnel }}
-      
-    
