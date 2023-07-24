@@ -25,8 +25,8 @@ on:
 jobs:
   No_tunnel:
     runs-on: ubuntu-latest
-    if: ${{ inputs.tunnel }} == 'disable'
-    steps:
+    if: "!contains(inputs.tunnel, 'disable')" 
+    steps: 
     - name: test
       run: >
         echo python3
@@ -35,7 +35,7 @@ jobs:
         ${{ inputs.id_addr }}   
   tunnel:
     runs-on: ubuntu-latest
-    if: ${{ inputs.tunnel }} == 'enable'
+    if: "!contains(inputs.tunnel, 'enable')" 
     steps:
     - name: test
       run: >
@@ -44,5 +44,3 @@ jobs:
         ${{ inputs.password }}
         ${{ inputs.id_addr }}
         ${{ inputs.tunnel }}
-      
-      
