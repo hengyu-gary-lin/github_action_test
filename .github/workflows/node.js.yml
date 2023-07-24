@@ -17,7 +17,12 @@ on:
         type: string
       tunnel:
         description: 'enable tunnel'
-        type: boolean
+        type: choice
+        required: true
+        option:
+        - true
+        - false
+
 jobs:
   No_tunnel:
     runs-on: ubuntu-latest
@@ -31,7 +36,7 @@ jobs:
         ${{ inputs.id_addr }}   
   tunnel:
     runs-on: ubuntu-latest
-    if: ${{ inputs.tunnel }}
+    if: ${{ input.tunnel }}
     steps:
     - name: test
       run: >
@@ -40,3 +45,5 @@ jobs:
         ${{ inputs.password }}
         ${{ inputs.id_addr }}
         ${{ inputs.tunnel }}
+      
+    
