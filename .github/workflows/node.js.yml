@@ -17,11 +17,8 @@ on:
         type: string
       tunnel:
         description: 'enable tunnel'
-        type: choice
+        type: boolean
         required: true
-        options:
-        - true
-        - false
 
 jobs:
   No_tunnel:
