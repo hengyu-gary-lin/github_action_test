@@ -19,7 +19,7 @@ on:
         description: 'enable tunnel'
         type: choice
         required: true
-        option:
+        options:
         - 'yes'
         - 'no'
 
@@ -45,3 +45,4 @@ jobs:
         ${{ inputs.password }}
         ${{ inputs.id_addr }}
         ${{ inputs.tunnel }}
+      
