@@ -31,7 +31,7 @@ jobs:
         ${{ inputs.id_addr }}   
   tunnel:
     runs-on: ubuntu-latest
-    if: ture
+    if: ${{ input.tunnel }}
     steps:
     - name: test
       run: >
@@ -40,4 +40,3 @@ jobs:
         ${{ inputs.password }}
         ${{ inputs.id_addr }}
         ${{ inputs.tunnel }}
-    
