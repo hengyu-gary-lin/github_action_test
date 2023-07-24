@@ -1,0 +1,30 @@
+name: Mixed inputs
+
+on:
+  workflow_dispatch:
+    inputs:
+      username:
+        description: 'postgres username'
+        required: true
+        type: string
+      password:
+        description: 'postres password'
+        required: true
+        type: string
+      ip_addr:
+        description: 'DB ip'
+        required: true
+        type: string
+      tunnel:
+        description: 'enable tunnel'
+        type: choice
+        options:
+         - '--tunnel'
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: test
+      run: >
+        echo ${{ inputs.tunnel }}
