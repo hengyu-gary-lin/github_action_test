@@ -19,8 +19,8 @@ on:
         description: 'enable tunnel'
         type: choice
         options:
-          - enable
-          - disable
+          - "enable"
+          - "disable"
 
 jobs:
   No_tunnel:
