@@ -21,6 +21,11 @@ on:
         options:
           - "enable"
           - "disable"
+      destination:
+        description: 'Eamil destination'
+        required: true
+        type: string
+        default: '2f833729.hpe.onmicrosoft.com@amer.teams.ms'
 
 jobs:
   No_tunnel:
@@ -33,6 +38,7 @@ jobs:
         ${{ inputs.username }}
         ${{ inputs.password }}
         ${{ inputs.id_addr }}   
+        ${{ inputs.destination }}
   tunnel:
     runs-on: ubuntu-latest
     if: "contains(inputs.tunnel, 'enable')" 
@@ -44,4 +50,5 @@ jobs:
         ${{ inputs.password }}
         ${{ inputs.id_addr }}
         ${{ inputs.tunnel }}
+        ${{ inputs.destination }}
     
